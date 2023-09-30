@@ -1,0 +1,33 @@
+<h1>Login Form</h1><br>
+<form #loginForm="ngForm" (ngSubmit)="handleFormSubmit(loginForm)">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+    name="email"
+    ngModel
+    required
+    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+    #email="ngModel"
+    >
+    <div class="alert alert-danger" *ngIf="email.touched && email.invalid">
+      <div *ngIf="email.errors?.['required']">Required</div>
+      <div *ngIf="email.errors?.['pattern']">Invalid Email</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1"
+    name="password"
+    ngModel
+    required
+    pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}"
+    #password="ngModel"
+    >
+    <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+      <div *ngIf="password.errors?.['required']">Required</div>
+      <div *ngIf="password.errors?.['pattern']">Invalid Password</div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+</form>
+<p>You must to be register!<a [routerLink]="['/register']">Register now</a></p>

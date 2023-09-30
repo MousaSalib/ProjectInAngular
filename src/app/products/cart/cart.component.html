@@ -1,0 +1,20 @@
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+  <div class="col" *ngFor="let item of cartProducts; let  i = index ">
+    <div class="card">
+      <img [src]="item.images[0]" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h3 class="card-title">{{ item.title }}</h3>
+        <h5 class="card-text">Quantity: {{ item.quantity }}</h5>
+        <!-- <p class="card-text">Price of one product: {{ item.price }}$</p> -->
+         <h5 class="card-text">Total Price: {{ item.totalPrice }}$</h5>
+        <p class="card-text">Brand: {{ item.brand }}</p>
+        <p class="card-text">Rating: {{ item.rating }}</p>
+        <button class="btn btn-danger" (click)="deleteItem(i)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

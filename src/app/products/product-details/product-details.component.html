@@ -1,0 +1,26 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col" *ngIf="productsL && productsL.length > 0">
+      <h2>Product Details</h2>
+      <div *ngIf="foundProduct" class="card">
+        <img [src]="foundProduct.images[0]" class="card-img-top" alt="Product Image">
+        <div class="card-body">
+          <h2 class="card-title">ID: {{ foundProduct.id }}</h2>
+          <h3 class="card-text">Title: {{ foundProduct.title }}</h3>
+          <p class="card-text">Description: {{ foundProduct.description }}</p>
+          <p class="card-text">Price: {{ foundProduct.price }}$</p>
+          <p class="card-text">Brand: {{ foundProduct.brand }}</p>
+          <p class="card-text">Rating: {{ foundProduct.rating }}</p>
+          <p class="card-text">Rating: {{ foundProduct.category }}</p>
+
+        </div>
+      </div>
+      <div *ngIf="!foundProduct">
+        <p>No product found for the specified ID.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

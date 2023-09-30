@@ -1,0 +1,23 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/']" routerLinkActive="text-success">Products List</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <!-- <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/product-card']" routerLinkActive="text-success">PrCard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/product-details']" routerLinkActive="text-success">PrDetails</a>
+        </li> -->
+      </ul>
+      <a [routerLink]="['/login']" class="me-3 nav-link">Login</a>
+      <a [routerLink]="['/register']" class="me-3 nav-link">Register</a>
+      <a [routerLink]="['/cart']" class="me-3 nav-link"><i class="fa-solid fa-cart-shopping"></i></a>
+    </div>
+  </div>
+</nav>
+

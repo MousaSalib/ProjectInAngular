@@ -1,0 +1,52 @@
+
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+  <div class="col" *ngFor="let product of productsL; index as i">
+    <div class="card" [ngClass]="{'out-of-stock': product.stock === 0}">
+      <img [src]="product.images[0]" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">
+          <span [ngStyle]="{'color': product.stock === 0 ? 'white' : 'white', 'background-color': product.stock === 0 ? 'red' : 'green'}">
+            {{ product.stock === 0 ? 'Out of Stock' : 'In Stock' }}
+          </span>
+        </p>
+        <p class="card-text">Price: {{ product.price }}$</p>
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.brand }}</p>
+        <p class="card-text">{{ product.rating }}</p>
+
+        <button class="btn btn-primary" (click)="goToDetails(product.id)">Details</button><br>
+        <button class="btn btn-success"  (click)="addToCart(product)">Add to cart</button>
+
+        <!-- <button class="btn btn-success" *ngIf="!addButton" (click)="addButton = true">Add to cart</button>
+        <div class="d-flex w-50" *ngIf="addButton">
+          <input type="number" class="form-control" [(ngModel)]="amount">
+          <button class="btn btn-danger"  (click)="addToCart(product)">Add</button>
+        </div> -->
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col" *ngFor="let product of productsL">
+    <div class="card">
+      <img [src]="product.images[0]" class="card-img-top" alt="Product Image">
+      <div class="card-body">
+        <p class="card-text">
+          <span [ngStyle]="{'color': product.stock === 0 ? 'white' : 'white', 'background-color': product.stock === 0 ? 'red' : 'green'}">
+            {{ product.stock === 0 ? 'Out of Stock' : 'In Stock' }}
+          </span>
+        </p>
+        <p class="card-text">Price: {{ product.price }}$</p>
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">{{ product.brand }}</p>
+        <p class="card-text">{{ product.rating }}</p>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
